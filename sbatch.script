@@ -1,0 +1,18 @@
+#!/bin/bash -l
+#SBATCH --job-name=pytorch_cifar
+#SBATCH --output=output.slurm
+
+#SBATCH --time=00
+#SBATCH --nodes=1
+#SBATCH --cpus-per-task=4
+#SBATCH --mem=75000mb
+#SBATCH --mail-type=END,FAIL,REQUEUE,STAGE_OUT
+#SBATCH --mail-user=qhv200@nyu.edu
+#SBATCH --partition=aquila
+#SBATCH --nodelist=aquila2
+#SBATCH --share
+
+source activate pytorch2_cpu_py36
+cd /gpfsnyu/home/qhv200/pytorch-cifar
+
+OMP_NUM_THREADS=4 MKL_NUM_THREADS=4 python main.py
