@@ -2,14 +2,13 @@
 #SBATCH --job-name=pytorch_cifar
 #SBATCH --output=output.slurm
 
-#SBATCH --time=00
+#SBATCH --time=3-00:00:00
 #SBATCH --nodes=1
 #SBATCH --cpus-per-task=4
 #SBATCH --mem=15000mb
 #SBATCH --mail-type=END,FAIL,REQUEUE,STAGE_OUT
 #SBATCH --mail-user=qhv200@nyu.edu
-#SBATCH --partition=aquila
-#SBATCH --nodelist=aquila2
+#SBATCH --gres:gpu=1
 #SBATCH --share
 
 source activate pytorch2_cpu_py36
