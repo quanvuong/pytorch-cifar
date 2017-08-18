@@ -10,7 +10,7 @@
 #SBATCH --mail-user=qhv200@nyu.edu
 #SBATCH --partition=share
 #SBATCH --nodelist=gpu3
-#SBATCH --gres:gpu=1
+#SBATCH --gres=gpu:4
 #SBATCH --share
 
 source activate pytorch2_cpu_py36
