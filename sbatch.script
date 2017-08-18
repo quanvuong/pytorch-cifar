@@ -8,8 +8,6 @@
 #SBATCH --mem=15000mb
 #SBATCH --mail-type=END,FAIL,REQUEUE,STAGE_OUT
 #SBATCH --mail-user=qhv200@nyu.edu
-#SBATCH --partition=share
-#SBATCH --nodelist=gpu3
 #SBATCH --gres=gpu:4
 #SBATCH --share
 
